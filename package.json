@@ -1,0 +1,28 @@
+{
+  "name": "com.xdavidleon.herogrid",
+  "version": "1.0.0",
+  "displayName": "Hero Grid System",
+  "description": "Generic grid system for Unity to help development of games that use grid based features or maps like base building games, roguelikes, etc.",
+  "unity": "2019.1",
+  "unityRelease": "0b5",
+  "documentationUrl": "https://github.com/xDavidLeon/GridSystem",
+  "changelogUrl": "https://github.com/xDavidLeon/GridSystem",
+  "licensesUrl": "https://github.com/xDavidLeon/GridSystem",
+  "dependencies": {
+    "com.xdavidleon.herolib": "1.0.0"
+  },
+  "hideInEditor": false,
+  "keywords": [
+    "grid",
+    "roguelike",
+    "map",
+    "tile",
+    "herolib",
+    "hero"
+  ],
+  "author": {
+    "name": "David Leon",
+    "email": "xdavidleon@gmail.com",
+    "url": "https://twitter.com/xdavidleon"
+  }
+}

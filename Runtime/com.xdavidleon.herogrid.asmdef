@@ -1,0 +1,16 @@
+{
+    "name": "GridSystem",
+    "rootNamespace": "HeroLib.GridSystem",
+    "references": [
+        "GUID:2978c39f0064771488557f6d90c0be04"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
