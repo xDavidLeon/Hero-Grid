@@ -1,3 +1,10 @@
+# 1.0.0 (2022-06-19)
+
+
+### Features
+
+* Removed Grid Building System, as it was used to cover a very specific use case. ([acc0748](https://github.com/xDavidLeon/Hero-Grid/commit/acc0748e10eccd5850a0c863a449db1ff839fa6f))
+
 ## [1.0.2](https://github.com/xDavidLeon/GridSystem/compare/v1.0.1...v1.0.2) (2022-06-16)
 
 
