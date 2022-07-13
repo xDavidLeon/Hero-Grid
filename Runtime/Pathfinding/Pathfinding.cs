@@ -12,11 +12,11 @@ namespace HeroLib.GridSystem
         private List<PathNode> _openList;
         private List<PathNode> _closedList;
 
-        public Pathfinding(int width, int height, float cellSize, Vector3 gridStartPosition, bool showDebug = false)
+        public Pathfinding(int width, int height, float cellSize, Vector3 gridStartPosition, GridMap<PathNode>.GridMapAxis axis, bool showDebug = false)
         {
-            _gridMap = new GridMap<PathNode>(width, height, cellSize, gridStartPosition,
-                (grid, x, y) => new PathNode(grid, x, y), showDebug);
-            
+            _gridMap = new GridMap<PathNode>(width, height, cellSize, gridStartPosition, axis,
+                (grid, x, y) => new PathNode(grid, x, y), new GridMap<PathNode>.GridMapDebugSettings());
+
             InitValues();
         }
 
@@ -36,13 +36,13 @@ namespace HeroLib.GridSystem
                 }
             }
         }
-        
+
         public List<PathNode> FindPath(int startX, int startY, int endX, int endY)
         {
             var startNode = GetNode(startX, startY);
             var endNode = GetNode(endX, endY);
 
-            if (startNode == null || endNode == null) 
+            if (startNode == null || endNode == null)
                 return null;
 
             _openList = new List<PathNode> { startNode };
@@ -75,7 +75,7 @@ namespace HeroLib.GridSystem
                 {
                     // Already checked? ignore
                     if (_closedList.Contains(neighbourNode)) continue;
-                    
+
                     // Is neighbor walkable?
                     if (neighbourNode.Walkable == false)
                     {

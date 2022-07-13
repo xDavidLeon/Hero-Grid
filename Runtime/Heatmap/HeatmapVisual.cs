@@ -49,10 +49,14 @@ namespace HeroLib.GridSystem
 
         private void Redraw()
         {
+            transform.rotation = _grid.GridAxis == GridMap<HeatmapGridElement>.GridMapAxis.XZ
+                ? Quaternion.Euler(90, 0, 0)
+                : Quaternion.identity;
+
             MeshUtils.CreateEmptyMeshArrays(_grid.Width * _grid.Height, out Vector3[] vertices, out Vector2[] uv,
                 out int[] triangles);
 
-            Vector3 quadSize = new Vector3(1, 1) * _grid.CellSize;
+            Vector3 quadSize = new Vector3(_grid.CellSize, _grid.CellSize);
 
             for (int x = 0; x < _grid.Width; x++)
             {
@@ -64,8 +68,10 @@ namespace HeroLib.GridSystem
                     float gridValueNormalized = invertColor ? 1.0f - value.Normalized() : value.Normalized();
                     Vector2 gridValueUV = new Vector2(gridValueNormalized, 0f);
 
+                    var gridPosition = _grid.GetWorldPositionXYSpace(x, y);
+
                     MeshUtils.AddToMeshArrays(vertices, uv, triangles, index,
-                        _grid.GetWorldPosition(x, y) + quadSize * 0.5f, 0f,
+                        gridPosition + quadSize * 0.5f, 0f,
                         quadSize, gridValueUV, gridValueUV);
                 }
             }
